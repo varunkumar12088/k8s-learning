@@ -11,6 +11,6 @@ public class AppController {
 
     @RequestMapping(method = RequestMethod.GET, value = "")
     public ResponseEntity<?> get(){
-        return ResponseEntity.ok("Response from <h1>V1 version</h1> APP");
+        return ResponseEntity.ok("Response from <h1>V2 version</h1> APP");
     }
 }
