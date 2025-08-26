@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/posts/v1")
 public class PostController {
 
+    private Integer count = 1;
     @RequestMapping(method = RequestMethod.GET, value = "")
     public ResponseEntity<?> getAll(){
+        System.out.println("Request count for post : " + count);
+        count++;
         return ResponseEntity.ok("Response from POST Service");
     }
 }
