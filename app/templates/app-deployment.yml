@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-learning
+  template:
+    metadata:
+      labels:
+        name: app
+        app: app-learning
+    spec:
+      containers:
+        - name: app
+          image: varunkumar12aug/app:v1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9090
