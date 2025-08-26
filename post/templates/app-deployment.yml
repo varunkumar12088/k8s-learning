@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: post
-          image: varunkumar12aug/post:v1
+          image: varunkumar12aug/post:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 8082
