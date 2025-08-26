@@ -7,11 +7,11 @@ spring:
         webflux:
           routes:
           - id: user
-            uri: http://localhost:8081
+            uri: http://user.user-test:8081
             predicates:
               - Path=/users/**
           - id: post
-            uri: http://localhost:8082
+            uri: http://post.post-test:8082
             predicates:
               - Path=/posts/**
 
