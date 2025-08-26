@@ -4,13 +4,13 @@ metadata:
   name: app
   namespace: test-app
 spec:
-  replicas: 10
+  replicas: 5
   minReadySeconds: 30 # wait for 30 sec before pod is ready going to next
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 2
+      maxUnavailable: 0
+      maxSurge: 1
   selector:
     matchLabels:
       app: app-learning
