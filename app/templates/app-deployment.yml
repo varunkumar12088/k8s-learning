@@ -25,4 +25,4 @@ spec:
           image: varunkumar12aug/app:v1.1
           imagePullPolicy: Always
           ports:
-            - containerPort: 90
+            - containerPort: 80
