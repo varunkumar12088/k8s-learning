@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app
-  namespace: test
+  namespace: test-app
 spec:
   replicas: 10
   minReadySeconds: 30 # wait for 30 sec before pod is ready going to next
