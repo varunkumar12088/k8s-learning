@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway
+  namespace: gateway-test
+spec:
+  replicas: 1
+  minReadySeconds: 30 # wait for 30 sec before pod is ready going to next
+  strategy:
+    type: RollingUpdate
+    maxUnavailable: 0
+    maxSurge: 1
+  selector:
+    matchLabels:
+      app: gateway-learning
+  template:
+    metadata:
+      labels:
+        name: gateway
+        app: gateway-learning
+    spec:
+      containers:
+        - name: gateway
+          image: varunkumar12aug/gateway:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: post
+  namespace: post-test
+spec:
+  replicas: 3
+  minReadySeconds: 30 # wait for 30 sec before pod is ready going to next
+  strategy:
+    type: RollingUpdate
+    maxUnavailable: 0
+    maxSurge: 1
+  selector:
+    matchLabels:
+      app: post-learning
+  template:
+    metadata:
+      labels:
+        name: post
+        app: post-learning
+    spec:
+      containers:
+        - name: post
+          image: varunkumar12aug/post:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082
