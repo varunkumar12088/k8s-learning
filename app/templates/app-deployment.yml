@@ -8,8 +8,9 @@ spec:
   minReadySeconds: 30 # wait for 30 sec before pod is ready going to next
   strategy:
     type: RollingUpdate
-    maxUnavailable: 1
-    maxSurge: 2
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 2
   selector:
     matchLabels:
       app: app-learning
