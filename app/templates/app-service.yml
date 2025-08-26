@@ -9,6 +9,6 @@ spec:
     app: app-learning
   ports:
     - name: http
-      port: 9090
-      targetPort: 9090
+      port: 80
+      targetPort: 80
       nodePort: 30001
