@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: varunkumar12aug/app:v2.2
+          image: varunkumar12aug/app:v3.3
           imagePullPolicy: Always
           ports:
             - containerPort: 9090
