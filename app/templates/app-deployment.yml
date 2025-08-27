@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: varunkumar12aug/app:v1.1
+          image: varunkumar12aug/app:v1.2
           imagePullPolicy: Always
           ports:
             - containerPort: 80
