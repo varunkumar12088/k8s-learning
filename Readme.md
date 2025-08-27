@@ -157,5 +157,5 @@ sudo systemctl enable kubelet.service
     echo "Run as sudo su - --> installation done, execute join with - kubeadm token create --print-join-command if its worker node, else proceed with other steps on Control node "
 ```
 ```bash
-sudo kubeadm join 10.240.0.31:6443 --token <token from master node> 
+sudo kubeadm join 10.240.0.31:6443 --token <token from master node>   --node-name <NEW_NODE_NAME>
 ```
