@@ -26,3 +26,17 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /app       # endpoint to check
+              port: 80
+            initialDelaySeconds: 10   # wait before first check
+            periodSeconds: 10         # check every 10s
+            failureThreshold: 3       # restart after 3 failures
+          readinessProbe:
+            httpGet:
+              path: /app       # endpoint to check readiness
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
