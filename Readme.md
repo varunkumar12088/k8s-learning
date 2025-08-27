@@ -1,5 +1,10 @@
 # Master Node
 
+```bash
+    sudo apt update && sudo apt upgrade -y
+    sudo apt-get update && sudo apt-get upgrade -y
+    
+```
 # Control Plane
 ```bash
 sudo swapoff -a
@@ -77,6 +82,13 @@ export KUBECONFIG=~<username>/.kube/config
 
 
 # Worker Node
+
+```bash
+    sudo apt update && sudo apt upgrade -y
+    sudo apt-get update && sudo apt-get upgrade -y
+    
+```
+
 ```bash
 sudo swapoff -a
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
