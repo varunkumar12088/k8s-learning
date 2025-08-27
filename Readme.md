@@ -77,8 +77,9 @@ kubectl create -f custom-resources.yaml
 
 kubeadm token create --print-join-command  
 ```
+``` bash
 export KUBECONFIG=~<username>/.kube/config
-
+```
 
 
 # Worker Node
