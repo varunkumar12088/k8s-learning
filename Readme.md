@@ -1,3 +1,4 @@
+# K8s installation on ubuntu
 # Master Node
 
 ```bash
@@ -75,12 +76,19 @@ curl https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/cu
 
 kubectl create -f custom-resources.yaml
 
-kubeadm token create --print-join-command  
+```
+
+```bash
+  kubeadm token create --print-join-command  
 ```
 ``` bash
 export KUBECONFIG=~<username>/.kube/config
 ```
 
+```bash
+  sudo hostnamectl set-hostname master-node
+
+```
 
 # Worker Node
 
@@ -144,8 +152,10 @@ sudo sed -i 's/ SystemdCgroup = false/ SystemdCgroup = true/' /etc/containerd/co
 sudo systemctl restart containerd.service
 sudo systemctl restart kubelet.service
 sudo systemctl enable kubelet.service
-
-echo "Run as sudo su - --> installation done, execute join with - kubeadm token create --print-join-command if its worker node, else proceed with other steps on Control node "
 ```
+``` bash
+    echo "Run as sudo su - --> installation done, execute join with - kubeadm token create --print-join-command if its worker node, else proceed with other steps on Control node "
 ```
-sudo kubeadm join 10.240.0.31:6443 --token <token from master node> ```
+```bash
+sudo kubeadm join 10.240.0.31:6443 --token <token from master node> 
+```
