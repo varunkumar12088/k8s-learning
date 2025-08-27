@@ -15,6 +15,11 @@ public class UserController {
     public ResponseEntity<?> getAll(){
         System.out.println("Request count for users : " + count);
         count++;
-        return ResponseEntity.ok("Response from USER service");
+        String podName = System.getenv("POD_NAME");
+        String podUid  = System.getenv("POD_UID");
+        System.out.println("Pod Name ::: " + podName);
+        System.out.println("Pod UID ::: " + podUid);
+        String message = "Response from USER service ( pod name : " + podName + ", pod id: " + podUid + ")";
+         return ResponseEntity.ok(message);
     }
 }

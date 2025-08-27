@@ -11,11 +11,21 @@ public class AppController {
 
     @RequestMapping(method = RequestMethod.GET, value = "")
     public ResponseEntity<?> get(){
-        return ResponseEntity.ok("Response from <h1>V3.3 version</h1> APP");
+        String podName = System.getenv("POD_NAME");
+        String podUid  = System.getenv("POD_UID");
+        System.out.println("Pod Name ::: " + podName);
+        System.out.println("Pod UID ::: " + podUid);
+        String message = "Response from V1 version APP ( pod name is : " + podName + ", pod id is: " + podUid + ")";
+        return ResponseEntity.ok(message);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/message")
     public ResponseEntity<?> getMessage(){
-        return ResponseEntity.ok("Message from APP application, used API-Gateway");
+        String podName = System.getenv("POD_NAME");
+        String podUid  = System.getenv("POD_UID");
+        System.out.println("Pod Name ::: " + podName);
+        System.out.println("Pod UID ::: " + podUid);
+        String message = "Response from V1 version APP with message api ( pod name is : " + podName + ", pod id is: " + podUid + ")";
+        return ResponseEntity.ok(message);
     }
 }

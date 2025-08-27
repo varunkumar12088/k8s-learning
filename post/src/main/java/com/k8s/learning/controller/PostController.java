@@ -14,6 +14,11 @@ public class PostController {
     public ResponseEntity<?> getAll(){
         System.out.println("Request count for post : " + count);
         count++;
-        return ResponseEntity.ok("Response from POST Service");
+        String podName = System.getenv("POD_NAME");
+        String podUid  = System.getenv("POD_UID");
+        System.out.println("Pod Name ::: " + podName);
+        System.out.println("Pod UID ::: " + podUid);
+        String message = "Response from POST Service ( pod name : " + podName + ", pod id: " + podUid + ")";
+        return ResponseEntity.ok(message);
     }
 }

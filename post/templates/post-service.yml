@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: post
-  namespace: post-test
+  namespace: test
 spec:
   type: ClusterIP
   selector:
-    app: user-learning
+    app: post-learning
   ports:
     - name: http
       port: 8082
