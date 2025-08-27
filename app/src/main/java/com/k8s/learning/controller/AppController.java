@@ -15,7 +15,7 @@ public class AppController {
         String podUid  = System.getenv("POD_UID");
         System.out.println("Pod Name ::: " + podName);
         System.out.println("Pod UID ::: " + podUid);
-        String message = "Response from V2 version APP ( pod name is : " + podName + ", pod id is: " + podUid + ")";
+        String message = "Response from V3 version APP ( pod name is : " + podName + ", pod id is: " + podUid + ")";
         return ResponseEntity.ok(message);
     }
 
