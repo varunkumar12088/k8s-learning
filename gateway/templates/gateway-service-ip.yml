@@ -5,7 +5,7 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-    - 172.31.100.10-172.31.100.20   # choose unused private IPs from your VPC
+    - 172.31.50.100-172.31.50.200   # choose unused private IPs from your VPC
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
