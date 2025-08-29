@@ -11,7 +11,7 @@ spring:
             predicates:
               - Path=/users/**
           - id: post
-            uri: http://post.test:8082
+            uri: http://post.test-post:8082
             predicates:
               - Path=/posts/**
 

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: post
-  namespace: test
+  namespace: test-post
 spec:
   replicas: 3
   minReadySeconds: 30 # wait for 30 sec before pod is ready going to next
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: post
-          image: varunkumar12aug/post:v2
+          image: varunkumar12aug/post:v2.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8082

@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: user
-          image: varunkumar12aug/user:v2
+          image: varunkumar12aug/user:v2.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8081
